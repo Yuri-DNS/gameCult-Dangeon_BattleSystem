@@ -1,5 +1,6 @@
 import Personagens.*;
 import Testes.EfeitoManager;
+import Testes.EnergiaManager;
 import Testes.TecnicaManager;
 
 import java.util.ArrayList;
@@ -9,18 +10,20 @@ public class Main {
 
         EfeitoManager.inicializarEfeitos();
 
+        EnergiaManager.inicializarEnergias();
+
+        TecnicaManager.inicializarTecnicas();
+
         ArrayList<Efeitos> lista1 = new ArrayList<>();
         lista1.add(EfeitoManager.buscarEfeitoPorNome("Buff de Energia"));
 
         ArrayList<Tecnica> lTec1 = new ArrayList<>();
         lTec1.add(TecnicaManager.buscarTecnicaPorNome("Punhos do Dragão"));
 
-        Energia energia1 = new Energia("KI do Dragão", "Yang", lista1);
-
         ArrayList<Efeitos> lista2 = new ArrayList<>();
         lista2.add(EfeitoManager.buscarEfeitoPorNome("Buff de Metodo de Cultivo"));
 
-        MetodoCultivo metodo = new MetodoCultivo("Arte Proibida", energia1, lista2);
+        MetodoCultivo metodo = new MetodoCultivo("Arte Proibida", EnergiaManager.buscarEnergiaPorNome("KI do Dragão"), lista2);
 
         Jogador jogador1 = new Jogador(metodo, lTec1, lista2, "Yo Rin",
                 10,
