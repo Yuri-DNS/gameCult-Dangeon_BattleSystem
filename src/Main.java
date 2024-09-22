@@ -14,9 +14,6 @@ public class Main {
 
         TecnicaManager.inicializarTecnicas();
 
-        ArrayList<Efeitos> lista1 = new ArrayList<>();
-        lista1.add(EfeitoManager.buscarEfeitoPorNome("Buff de Energia"));
-
         ArrayList<Tecnica> lTec1 = new ArrayList<>();
         lTec1.add(TecnicaManager.buscarTecnicaPorNome("Punhos do Dragão"));
 
